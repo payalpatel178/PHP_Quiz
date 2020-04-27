@@ -1,0 +1,50 @@
+{% extends "Base/base.twig" %}
+
+{% block meta_tag_info %}
+	<meta name="description" content="Answers page of Awesome PHP Quiz website">
+{% endblock %}
+
+{% block page_title %}
+	Quiz Results
+{% endblock %}
+
+{% block main_content %}
+	<section class="container">
+		<h2>Quiz Answers</h2>
+		<hr>
+		<div>
+			<table>
+				<thead></thead>
+				<tbody>
+					{% for res in results %}
+						<tr class="bigger">
+							<td>{{ res.id }}</td>
+							<td>{{ res.question }}</td>
+						</tr>
+						<tr>
+							<td>[A]</td>
+							<td>{{ res.optionA }}</td>
+						</tr>
+						<tr>
+							<td>[B]</td>
+							<td>{{ res.optionB }}</td>
+						</tr>
+						<tr>
+							<td>[C]</td>
+							<td>{{ res.optionC }}</td>
+						</tr>
+						<tr>
+							<td>[D]</td>
+							<td>{{ res.optionD }}</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="font-weight-bold">Answer : [{{ res.answer|upper }}]<br/><hr></td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+		</div>
+	</section>
+{% endblock %}

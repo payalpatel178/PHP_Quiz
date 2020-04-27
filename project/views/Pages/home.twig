@@ -1,0 +1,27 @@
+{% extends "Base/base.twig" %}
+
+{% block meta_tag_info %}
+	<meta name="description" content="Home page of Awesome PHP Quiz website">
+{% endblock %}
+
+{% block page_title %}
+	Home
+{% endblock %}
+
+{% block main_content %}
+	<section class="container">
+		<div class="col-12">
+			<div class="row text-center">
+				{% include "Pages/message.twig" %}
+			</div>
+			<div class="row">
+				<div class="col-md-7 col-sm-12">
+					<img src="images/qa.jpg" alt="image"></img>
+			</div>
+			<div class="home col-md-5 col-sm-12 text-center">
+				<h2 class="space">It's Time to Explore your Knowledge.<br/>Are you Ready?</h2><br/>
+				<a href="login" class="start next">Let's do it!</a>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "Base/base.twig" %}
+
+{% block meta_tag_info %}
+	<meta name="description" content="Start Quiz page of Awesome PHP Quiz website">
+{% endblock %}
+
+{% block page_title %}
+	PHP Quiz
+{% endblock %}
+
+{% block main_content %}
+	<section class="container text-center">
+
+		<h4 class="text-center p-5 m-5">Result
+			<br><hr>You got
+			{{correct}}
+			/
+			{{total_qn}}
+			Correct Answers</h4>
+
+		<a href="quiz" class="m-1 tryagain">Try Again</a><br/><br/>
+		<a href="answers" class="tryagain">Know Correct Answers</a>
+	</section>
+{% endblock %}

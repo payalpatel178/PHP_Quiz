@@ -1,0 +1,78 @@
+{% extends "Base/base.twig" %}
+
+{% block meta_tag_info %}
+	<meta name="description" content="Start Quiz page of Awesome PHP Quiz website">
+{% endblock %}
+
+{% block page_title %}
+	PHP Quiz
+{% endblock %}
+
+{% block main_content %}
+
+	<section class="container">
+		<h4 class="text-center">
+
+			Question
+			{{id}}
+			of
+			{{total_qn}}</h4>
+		<hr>
+
+		<form method="POST">
+			<table class="table" id="grad">
+				<thead>
+					<tr class="bigger">
+						<td>[{{results.id}}]
+							{{results.question}}</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							{% set optA = "a" %}
+							<button type="button" name="btn" class="btn optionBtn glow-on-hover" id="a" onclick="checkResult('{{optA}}','{{results.answer}}',{{counter}})">A)
+								{{results.optionA}}</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{% set optB = "b" %}
+							<button type="button" name="btn" class="btn optionBtn glow-on-hover" id="b" onclick="checkResult('{{optB}}','{{results.answer}}',{{counter}})">B)
+								{{results.optionB}}</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{% set optC = "c" %}
+							<button type="button" name="btn" class="btn optionBtn glow-on-hover" id="c" onclick="checkResult('{{optC}}','{{results.answer}}',{{counter}})">C)
+								{{results.optionC}}</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{% set optD = "d" %}
+							<button type="button" name="btn" class="btn optionBtn glow-on-hover" id="d" onclick="checkResult('{{optD}}','{{results.answer}}',{{counter}})">D)
+								{{results.optionD}}</button>
+						</td>
+					</tr>
+					<tr>
+						<input type="hidden" name="counter" id="count"/><br/>
+						<td>
+							{% set id = results.id + 1 %}
+							<button type="submit" name="btnNext" id="next" value={{id}} class="btn next col-sm-2 offset-md-10 offset-sm-3 offset-xs-2">
+
+								{% if id <= total_qn %}
+									NEXT
+								{% else %}
+									FINISH
+								{% endif %}
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</section>
+
+{% endblock %}

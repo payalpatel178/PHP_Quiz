@@ -1,0 +1,20 @@
+{% if success_message %}
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="alert alert-success">
+				<h4 class="alert-heading">Success!</h4>
+				<p class="mb-0">{{ success_message }}</p>
+			</div>
+		</div>
+	</div>
+{% endif %}
+{% if error_message %}
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="alert alert-danger">
+				<h4 class="alert-heading">Uh Oh!</h4>
+				<p class="mb-0">{{ error_message }}</p>
+			</div>
+		</div>
+	</div>
+{% endif %}
