@@ -1,0 +1,16 @@
+/* SOME STYLING FOR PRINT FORMAT*/
+.fa-arrow-circle-up{
+    display:none;
+}
+h1{
+    text-align: center;
+}
+.btn{
+    background-color: teal;
+}
+table{
+    border: 1px solid grey;
+}
+p{
+    font-size: large;
+}
